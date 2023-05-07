@@ -57,3 +57,17 @@ let experienceByProfession = teamMembers.reduce((acc,curr) => {
 }, {});
 
 console.log(experienceByProfession)
+
+// Grouping 2
+let namesByProfession = teamMembers.reduce((acc,curr) => {
+  let key = curr.profession;
+  let names = [];
+  if (!acc[key]) {
+    acc[key] = [curr.name];
+  } else {
+    acc[key].push(curr.name);
+  }
+  return acc;
+}, {});
+
+console.log(namesByProfession)
